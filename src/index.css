@@ -16,13 +16,14 @@ main {
   margin: 0 auto;
   max-width: 90%;
   padding: 50px 30px;
+  min-height: calc(100vh - 26vh);
 }
 :root {
-  --primary: #1e3888;
-  --secondary: #47a8bd;
-  --tertiary: #f5e663;
-  --light: #FFC494;
-  --dark: #4A1921;
+  --primary: #E1E5F2;
+  --secondary: #FFFFFF;
+  --tertiary: #9AC8F7;
+  --light: #72B4F7;
+  --dark: #022B3A;
   --darker: #111111;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
@@ -36,7 +37,8 @@ main {
 
 html,
 body {
-  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -104,6 +106,8 @@ a:hover {
 
 header {
   background: var(--primary);
+  padding: 5px;
+  height: 15vh;
 }
 
 header a {
@@ -119,7 +123,7 @@ button {
   outline: none;
   cursor: pointer;
   margin: 0 1px;
-  background-color: var(--secondary);
+  background-color: var(--dark);
 }
 
 button:hover {
@@ -280,7 +284,7 @@ textarea {
 }
 
 button {
-  background: var(--primary);
+  background: var(--light);
   border: 0;
   border-radius: 5px;
   color: #fff;

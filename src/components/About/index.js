@@ -1,10 +1,17 @@
 import React from 'react';
-
+import { Avatar } from '@mui/material';
 function About({ profile }) {
   return (
     <div>
       <h1>About me</h1>
-      <img src={profile.avatar} alt={profile.file} className="img-thumbnail" />
+
+      <Avatar
+        alt={profile.name}
+        src={profile.avatar}
+        sx={{ width: '10%', height: '10%' }}
+      />
+
+      {/* <img src={profile.avatar} alt={profile.file} className="img-thumbnail" /> */}
       <p>
         My name is {profile.name} and this website is to showcase my past
         projects in what I have done in my programming career. Here should be

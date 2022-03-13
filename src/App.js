@@ -12,7 +12,11 @@ function App() {
     name: 'Fabio Choi',
     var: 'fabio-choi',
     avatar: require(`./assets/avatar/fabio-choi.png`),
-    file: 'fabio-choi.png'
+    file: 'fabio-choi.png',
+    github: 'fchoi1',
+    linkedin: 'https://www.linkedin.com/in/fabio-choi-6a325676',
+    steam: 'https://steamcommunity.com/id/nickonanother/',
+    instgram: 'https://www.instagram.com/w4ng0/'
   };
 
   console.log(profile);
@@ -31,14 +35,14 @@ function App() {
       case 'contact':
         return <Contact />;
       case 'resume':
-        return <Resume />;
+        return <Resume profile={profile} />;
       default:
         return <About profile={profile} />;
     }
   };
 
   return (
-    <div>
+    <>
       <Nav
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
@@ -46,8 +50,9 @@ function App() {
         profile={profile}
       />
       <main>{renderPage(currentPage)}</main>
-      <Footer/>
-    </div>
+
+      <Footer profile={profile} />
+    </>
   );
 }
 

@@ -1,0 +1,15 @@
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+.icon-wrapper a{
+}
+
+.footer--pin {
+  height: 10vh;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}

@@ -1,9 +1,14 @@
 import React from 'react';
-
+import headerBackground from './header.jpg'
 function Nav(props) {
   const { pages, profile, currentPage, setCurrentPage } = props;
   return (
-    <header>
+    <header
+      style={{
+        backgroundImage:
+          `url(${headerBackground})`
+      }}
+    >
       <h1>{profile.name}</h1>
       <nav>
         <ul className="flex-row">
