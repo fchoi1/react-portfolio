@@ -1,45 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './project.css';
+import { Col } from 'react-bootstrap';
+import { Container, Row, Badge } from 'react-bootstrap';
 
-function Projects() {
-  const [projectsList] = useState([
-    {
-      projectName: 'first-bio',
-      github: 'https://github.com/fchoi1/my-bio',
-      website: '',
-      descriptions: '',
-      image: require('../../assets/projects/first-bio.png'),
-      technologies: ['HTML', 'CSS']
-    },
-    {
-      projectName: 'password-generator',
-      github: 'https://github.com/fchoi1/password-generator',
-      website: 'https://fchoi1.github.io/password-generator/',
-      descriptions:
-        'A simple javascript application hosted on github pages to create a password based on different parameters set by user',
-      image: require('../../assets/projects/password-generator.png'),
-      technologies: ['Javascript', 'HTML', 'CSS']
-    }
-  ]);
+function Project(props) {
+  const { project } = props;
 
-  console.log(projectsList);
-
+  const chipStyle = {
+    gap: 2,
+    maxWidth: 100,
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis'
+  };
   return (
-    <div>
-      <h1>My Projects</h1>
-      <section className="projects flex-row">
-        {projectsList.map((project, i) => (
-          <div key={i} className="mx-2 project-card">
-            <h2 className='project-title'>{project.projectName}</h2>
-            <a href={project.github}>
-              <img src={project.image} alt={project.projectName + ' image'} />
-            </a>
-            <span> {project.technologies} </span>
-          </div>
-        ))}
-      </section>
-    </div>
+    <Col xs={12} sm={6} md={5} lg={4}>
+      <div className="mx-2 project-card">
+        <h2 className="project-title">{project.projectName}</h2>
+        <a href={project.website} className="project-image">
+          <img src={project.image} alt={project.projectName + ' image'} />
+        </a>
+        <a href={project.github} style={{ textDecoration: 'none' }}>
+          <span> Github Project Link </span>
+        </a>
+        <span> Technologies: </span>
+
+        <Row className="">
+          {project.technologies.map((tech) => (
+            <Col key={tech} className=" my-1 col-auto">
+              <Badge pill>{tech}</Badge>
+            </Col>
+          ))}
+        </Row>
+      </div>
+    </Col>
   );
 }
 
-export default Projects;
+export default Project;

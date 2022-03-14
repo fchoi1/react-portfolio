@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,11 +19,11 @@ main {
   min-height: calc(100vh - 26vh);
 }
 :root {
-  --primary: #E1E5F2;
-  --secondary: #FFFFFF;
-  --tertiary: #9AC8F7;
-  --light: #72B4F7;
-  --dark: #022B3A;
+  --primary: #e1e5f2;
+  --secondary: #ffffff;
+  --tertiary: #9ac8f7;
+  --light: #72b4f7;
+  --dark: #022b3a;
   --darker: #111111;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
@@ -39,6 +39,7 @@ html,
 body {
   display: flex;
   flex-direction: column;
+  font-size: calc(0.1em + 1vw);
 }
 
 body {
@@ -50,7 +51,15 @@ body {
   letter-spacing: 0.1em;
   background: var(--dark);
   color: var(--light);
-  font-family: 'Poiret One', cursive;
+}
+
+nav {
+  height: 5vh;
+}
+
+ul {
+  padding: 0 1%;
+  margin: 0.1%;
 }
 
 h1,
@@ -107,7 +116,7 @@ a:hover {
 header {
   background: var(--primary);
   padding: 5px;
-  height: 15vh;
+  height: 12vh;
 }
 
 header a {

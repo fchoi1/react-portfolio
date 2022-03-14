@@ -2,10 +2,19 @@ import './App.css';
 import React, { useState } from 'react';
 import About from './components/About';
 import Nav from './components/Nav';
-import Projects from './components/Project';
+import Project from './components/Project';
+import ProjectList from './components/ProjectList';
 import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Footer from './components/Footer';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Roboto:300,400,700', 'sans-serif']
+  }
+});
+
 
 function App() {
   const profile = {
@@ -31,7 +40,7 @@ function App() {
   const renderPage = (page) => {
     switch (page) {
       case 'projects':
-        return <Projects />;
+        return <ProjectList />;
       case 'contact':
         return <Contact />;
       case 'resume':
